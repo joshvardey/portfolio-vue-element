@@ -3,10 +3,6 @@
     
     <router-view/>
 
-    <div id="nav">
-      <a target="_blank" href="http://www.joshvardey.com/">Journalist</a> |
-      <router-link to="/about">Coder</router-link>
-    </div>
   </div>
 </template>
 

@@ -1,6 +1,10 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
+    <h1><div id="nav">
+      <a target="_blank" href="http://www.joshvardey.com/">Journalist</a> |
+      <router-link to="/about"><span v-on:mouseenter="changePic" v-on:mouseleave="changeBack">Coder</span></router-link>
+    </div></h1>
+
     
   </div>
 </template>
@@ -8,8 +12,14 @@
 <script>
 export default {
   name: 'HelloWorld',
-  props: {
-    msg: String
+
+  methods: {
+    changePic() {
+      this.$emit("dev")
+    },
+    changeBack() {
+      this.$emit("dey")
+    }
   }
 }
 </script>
