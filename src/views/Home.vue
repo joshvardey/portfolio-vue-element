@@ -1,9 +1,11 @@
 <template>
   <div class="home">
     <Navbar/>
+    
+    <img class="pic" v-show="!dev" src="../assets/varddev.png">
+    <img class="pic" v-show="dev" src="../assets/varddev2.png">
+
     <HelloWorld @dev="devPic" @dey="deyPic"/>
-    <img v-show="!dev" src="../assets/varddev.png">
-    <img v-show="dev" src="../assets/varddev2.png">
     
   </div>
 </template>
@@ -34,3 +36,10 @@ export default {
   }
 }
 </script>
+
+<style>
+img.pic {
+  margin: 5% 0 5% 0;
+}
+</style>
+

@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1><div id="nav">
-      <a :class="{'link-active' : isActive}" v-on:mouseenter="isActived" v-on:mouseleave="isActived" target="_blank" href="http://www.joshvardey.com/">Journalist  </a> |
-      <router-link to="/about" v-on:mouseenter.native="changePic" v-on:mouseleave.native="changeBack">  Web Developer</router-link>
+      <a :class="{'link-active' : isActive}" v-on:mouseenter="isActived" v-on:mouseleave="isActived" target="_blank" href="http://www.joshvardey.com/">Journalist <span class="space"></span> </a> |
+      <router-link to="/about" v-on:mouseenter.native="changePic" v-on:mouseleave.native="changeBack"> <span class="space"></span> Web Developer</router-link>
     </div></h1>
 
     
@@ -23,13 +23,13 @@ export default {
     changePic() {
       this.$emit("dev")
       this.offColor
-      devActivated()
+      this.devActivated()
     },
     
     changeBack() {
       this.$emit("dey")
       this.onColor
-      devActivated()
+      this.devActivated()
     },
     isActived () {
       if (this.isActive === false) {
@@ -73,5 +73,8 @@ a:hover {
   color: #42b983
 }
 
+.space {
+  margin: 0 10px
+}
 
 </style>

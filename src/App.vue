@@ -16,6 +16,8 @@
 }
 #nav {
   padding: 30px;
+  font-family: trattatello;
+  color: #2c3e50;
 }
 
 a {
