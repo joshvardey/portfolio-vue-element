@@ -9,7 +9,7 @@
     <el-menu-item index="2-3">item three</el-menu-item>
     
   </el-submenu>
-  <el-menu-item index="3"><router-link to="/about">About</router-link></el-menu-item>
+  <el-menu-item index="3" class="about" :router="true" :default-active="$route.path">About</el-menu-item>
   
 </el-menu>
 <div class="line"></div>
@@ -25,6 +25,7 @@
     },
     methods: {
       handleSelect(key, keyPath) {
+        
         console.log(key, keyPath);
       }
     }
@@ -35,6 +36,13 @@
 
 ul.el-menu--horizontal.el-menu {
   display: inline-block;
+}
+
+li.el-menu-item.about {
+  font-family: trattatello;
+  font-size: 1.4em;
+  text-decoration: none;
+  color: #2c3e50;
 }
 
 </style>
