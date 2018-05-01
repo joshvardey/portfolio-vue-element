@@ -4,7 +4,7 @@
   <el-menu-item index="1">Home</el-menu-item>
   <el-submenu index="2">
     <template slot="title">Projects</template>
-    <el-menu-item index="2-1">item one</el-menu-item>
+    <el-menu-item index="2-1">Athena</el-menu-item>
     <el-menu-item index="2-2">item two</el-menu-item>
     <el-menu-item index="2-3">item three</el-menu-item>
     
@@ -21,7 +21,6 @@
     data() {
       return {
         activeIndex: '1',
-        activeIndex2: '1'
       };
     },
     methods: {

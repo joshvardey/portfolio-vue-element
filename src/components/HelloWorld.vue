@@ -1,8 +1,8 @@
 <template>
   <div class="hello">
     <h1><div id="nav">
-      <a target="_blank" href="http://www.joshvardey.com/">Journalist</a> |
-      <router-link to="/about"><span v-on:mouseenter="changePic" v-on:mouseleave="changeBack">Coder</span></router-link>
+      <a :class="{'link-active' : isActive}" v-on:mouseenter="isActived" v-on:mouseleave="isActived" target="_blank" href="http://www.joshvardey.com/">Journalist  </a> |
+      <router-link to="/about" v-on:mouseenter.native="changePic" v-on:mouseleave.native="changeBack">  Web Developer</router-link>
     </div></h1>
 
     
@@ -12,20 +12,44 @@
 <script>
 export default {
   name: 'HelloWorld',
+  data () {
+    return {
+      isActive: false,
+      devActive: false
+    }  
+  },
 
   methods: {
     changePic() {
       this.$emit("dev")
+      this.offColor
+      devActivated()
     },
+    
     changeBack() {
       this.$emit("dey")
-    }
+      this.onColor
+      devActivated()
+    },
+    isActived () {
+      if (this.isActive === false) {
+        this.isActive = true;
+      } else this.isActive = false
+  },
+  devActivated () {
+    if (this.devActive === false) {
+        this.devActive = true;
+      } else this.devActive = false
   }
+}
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+h1 {
+  font-size: 1.5em
+}
 h3 {
   margin: 40px 0 0;
 }
@@ -37,7 +61,17 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
+
+.link-active {
+  font-family: trattatello;
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #42b983
 }
+
+a:hover {
+  color: #42b983
+}
+
+
 </style>
